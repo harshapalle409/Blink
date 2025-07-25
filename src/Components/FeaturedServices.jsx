@@ -4,17 +4,43 @@ import '../Styles/FeaturedServices.css';
 
 // Import your images
 import testImage from '../images/salon1.jpg';
-import HairCut from '../images/haircutformen.jpg';
-// ... import other specific images if you have them
+// import HairCut from '../images/haircutformen.jpg';
+import beardDesigning from '../images/Men/Beard Designing.avif';
+import headMassage from '../images/Men/Head massage.jpeg';
+import hairCut from '../images/Men/Hair cut.jpeg';
+import hairSpa from '../images/Men/Hair Spa.jpeg';
+import hairStraightening from '../images/Men/Hair Straightening & Smoothening.webp';
+import freshFruitFacial from '../images/Men/Fresh Fruit Facial.jpeg';
+import antiAcneCleanUp from '../images/Men/Anti-Acne Clean-Up.jpeg';
+import goldFacial from '../images/Men/Gold Facial.jpeg';
+import deepTissueMassage from '../images/Men/Deep Tissue Massage.jpeg';
+import fullBody from '../images/Men/Full Body.jpeg';
+import balineseMassage from '../images/Men/Balinese Massage.jpeg';
 
+// ... import other specific images if you have them
+// Create image mapping object
+const imageMap = {
+  'Beard Designing': beardDesigning,
+    'Head massage': headMassage,
+    'Hair cut': hairCut,
+    'Hair Spa': hairSpa,
+    'Hair Straightening & Smoothening': hairStraightening,
+    'Fresh Fruit Facial': freshFruitFacial,
+    'Anti-Acne Clean-Up': antiAcneCleanUp,
+    'Gold Facial': goldFacial,
+    'Deep Tissue Massage': deepTissueMassage,
+    'Full Body': fullBody,
+    'Balinese Massage': balineseMassage,
+  
+}
 // --- YOUR FULL DATA SET ---
 const serviceCategories = [
     { id: 'hairCareMen', name: 'HAIR CARE FOR MEN', services: [
-        { name: 'Hair Cut', description: 'Personalized haircut by skilled stylists to perfectly suit your look.', image: HairCut, link: '#' },
-        { name: 'Beard Designing', description: 'Expert shaping and styling to perfect your beard and define your features.', image: testImage, link: '#' },
-        { name: 'Head Massage', description: 'Relaxing your hair follicles and regenerating them for hair growth.', image: testImage, link: '#' },
-        { name: 'Hair Spa', description: 'A miracle booster that every human needs for healthy, vibrant hair.', image: testImage, link: '#' },
-        { name: 'Hair Straightening', description: 'Our salonists offer the best style first and smoothening next.', image: testImage, link: '#' },
+      { name: 'Haircut', description: 'Personalized haircut by skilled stylists.', image: imageMap['Hair cut'] },
+      { name: 'Beard Designing', description: 'Expert shaping and styling to perfect your beard.', image: imageMap['Beard Designing'] },
+      { name: 'Head Massage', description: 'Your hair means relaxing your mind and regenerating them for hair home with our services. Come experience a natural..', image: imageMap['Head massage'] },
+      { name: 'Hair Spa', description: 'Experience the joy of a hair salon just like home with our services. Naturals spa is a miracle booster that every human needs.', image: imageMap['Hair Spa'] },
+      { name: 'Hair Straightening & Smoothening', description: 'Mane matters for every man at Naturals care comes first and our salonist offers the best style first and smoothening.', image: imageMap['Hair Straightening & Smoothening'] },
     ]},
     { id: 'hairCareWomen', name: 'HAIR CARE FOR WOMEN', services: [
         { name: 'Haircut & Trim', description: 'Includes Hair Wash and Blast Dry for a fresh look.', image: testImage, link: '#'},
@@ -26,9 +52,9 @@ const serviceCategories = [
         id: 'skinCareMen', 
         name: 'SKIN CARE FOR MEN', 
         services: [
-            { name: 'Fresh Fruit Facial', description: 'A nourishing facial using fresh fruits to rejuvenate your skin and provide a natural glow.', image: testImage, link: '#' },
-            { name: 'Anti-Acne Clean-Up', description: 'An effective treatment that helps to cleanse pores and reduce acne breakouts.', image: testImage, link: '#' },
-            { name: 'Gold Facial', description: 'Indulge in a luxurious and radiant gold facial for an instant, brilliant glow.', image: testImage, link: '#' },
+      { name: 'Fresh Fruit Facial', description: 'A nourishing facial using fresh fruits to rejuvenate your skin.', image: imageMap['Fresh Fruit Facial'] },
+      { name: 'Anti-Acne Clean-Up', description: 'Helps to cleanse pores and reduce acne breakouts.', image: imageMap['Anti-Acne Clean-Up'] },
+      { name: 'Gold Facial', description: 'Indulge in a radiant gold facial for an instant glow.', image: imageMap['Gold Facial'] },
         ]
     },
     { 
@@ -44,9 +70,9 @@ const serviceCategories = [
         id: 'bodyCareMen', 
         name: 'BODY CARE FOR MEN', 
         services: [
-            { name: 'Traditional Thai Massage', description: 'An ancient healing art using passive stretching and gentle pressure along energy lines.', image: testImage, link: '#' },
-            { name: 'Deep Tissue Massage', description: 'Focuses on realigning deeper layers of muscles and connective tissue.', image: testImage, link: '#' },
-            { name: 'Full Body Massage (Aroma)', description: 'A complete body relaxation experience with aromatic essential oils.', image: testImage, link: '#' },
+      { name: 'Balinese Massage', description: 'A full-body, deep-tissue, holistic treatment using a combination of gentle stretches, acupressure, reflexology, and aromatherapy.', image: imageMap['Balinese Massage'] },
+      { name: 'Deep Tissue Massage', description: 'Focuses on realigning deeper layers of muscles and connective tissue, often used for chronic aches and pains.', image: imageMap['Deep Tissue Massage'] },
+      { name: 'Full Body', description: 'Comprehensive full body bleaching for overall skin brightening.', image: imageMap['Full Body'] },
         ]
     },
     { 
