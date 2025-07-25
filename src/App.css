@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+/* Ensure the root variables are consistent with your design system */
+:root {
+  --vibrant-cyan: #00C6FF;
+  --hot-pink: #F00B75;
+  /* ... other variables as per your project's :root */
+}
+
+/* =================================================================== */
+/* FLOATING WHATSAPP BUTTON (ACCURATE VERSION)
+/* =================================================================== */
+
+/* This container is the element that is fixed to the viewport */
+.whatsapp-float-container {
+  /* --- Positioning --- */
+  position: fixed; /* This makes it float over everything */
+  bottom: 25px;    /* Distance from the bottom */
+  right: 25px;     /* Distance from the right */
+  z-index: 9999;   /* A very high z-index to ensure it's on top of all other content */
+}
+

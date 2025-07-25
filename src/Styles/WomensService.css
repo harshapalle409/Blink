@@ -1,0 +1,285 @@
+/* Using the "Blink" Design System Variables */
+:root {
+    --vibrant-cyan: #00C6FF;
+    --hot-pink: #F00B75;
+    --bg-light: #FFFFFF; /* Main background for the page - set to white */
+    --bg-card: #242424; /* Background for cards and dark elements */
+    --text-primary: #F5F5F5; /* Light text for use on dark backgrounds (like cards) */
+    --text-secondary: #A0A0A0; /* Secondary light text for use on dark backgrounds */
+    --text-dark-contrast: #1A1A1A; /* Dark text for use on light backgrounds (like the main wrapper) */
+    --border-color: #333; /* Dark border for elements on dark backgrounds */
+    --border-color-light: #e0e0e0; /* Light border for elements on light backgrounds */
+}
+
+.women_services_wrapper {
+    background-color: var(--bg-light); /* This is correctly set to white */
+    color: var(--text-dark-contrast); /* Default text color for the wrapper, dark for contrast */
+    font-family: 'Poppins', sans-serif;
+    padding: 40px 20px;
+    margin: 0 auto;
+}
+
+/* =================================================================== */
+/* HEADER (Adapted from services-header in MensService.css)
+/* =================================================================== */
+.services-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    color: var(--text-dark-contrast); /* Ensure header text is dark on white background */
+}
+.services-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.services-header p {
+    font-size: 1.2rem;
+    color: var(--text-dark-contrast); /* Secondary text also dark on white */
+    line-height: 1.6;
+}
+
+/* =================================================================== */
+/* MAIN LAYOUT (The Split-View)
+/* =================================================================== */
+.services-layout {
+    display: flex;
+    gap: 40px;
+    max-width: 1400px; /* Limit overall content width */
+    margin: 0 auto;
+}
+
+/* =================================================================== */
+/* SIDEBAR NAVIGATION (Desktop)
+/* =================================================================== */
+.services-sidebar {
+    flex: 0 0 280px; /* Fixed width for the sidebar */
+    position: sticky;
+    top: 100px; /* Adjust based on your navbar height */
+    align-self: flex-start; /* Important for sticky positioning */
+    height: calc(100vh - 120px); /* Adjust based on top position */
+    overflow-y: auto;
+    /* Background for the sidebar items is handled by the <li><a> styles */
+}
+.category-nav-desktop ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.category-nav-desktop li a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--text-secondary); /* Text color for inactive sidebar links */
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+    background-color: transparent; /* Default transparent background */
+}
+.category-nav-desktop li a:hover {
+    background-color: var(--bg-card); /* Dark background on hover */
+    color: var(--text-primary); /* Light text on dark hover */
+}
+.category-nav-desktop li a.active {
+    background-color: var(--bg-card); /* Dark background for active link */
+    color: var(--hot-pink); /* Hot pink text for active link */
+    font-weight: 600;
+    border-left: 3px solid var(--hot-pink);
+}
+
+/* =================================================================== */
+/* CONTENT AREA (Right Side)
+/* =================================================================== */
+.services-content {
+    flex: 1;
+    min-width: 0; /* Prevents flexbox overflow issues */
+    padding-top: 20px; /* Give some space at the top of the content area */
+}
+
+/* Individual Service Category Section (contains h2 and grid) */
+.service-category-section {
+    margin-bottom: 60px; /* Space between different service sections */
+}
+.service-category-section:last-child {
+    margin-bottom: 0; /* No margin after the last section */
+}
+
+.service-category-section h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--text-dark-contrast); /* Dark text on white background */
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--border-color-light); /* Light border for contrast */
+    padding-bottom: 15px;
+}
+
+.Womensservices-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.service-card {
+    background-color: var(--bg-card); /* Dark background for cards */
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+}
+.service-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.service-card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.service-card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary); /* Light text on dark card background */
+    margin-bottom: 10px;
+}
+.service_card_description { /* Corrected class name from .service-card-description */
+    font-size: 0.95rem;
+    color: var(--text-secondary); /* Secondary light text on dark card background */
+    line-height: 1.6;
+}
+
+/* =================================================================== */
+/* MOBILE NAVIGATION (Dropdown)
+/* =================================================================== */
+.category-nav-mobile {
+    display: none; /* Hidden on desktop */
+    margin-bottom: 30px;
+}
+.category-nav-mobile select {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid var(--border-color); /* Dark border for consistency with cards */
+    background-color: var(--bg-card); /* Dark background for dropdown */
+    color: var(--text-primary); /* Light text for dropdown */
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    -webkit-appearance: none; /* Remove default arrow on WebKit browsers */
+    -moz-appearance: none; /* Remove default arrow on Firefox */
+    appearance: none; /* Remove default arrow */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23F5F5F5%22%20d%3D%22M287%2C118.735L146.2%2C259.43L5.4%2C118.735c-7.5-7.5-7.5-19.8%2C0-27.3c7.5-7.5%2C19.8-7.5%2C27.3%2C0l113.5%2C113.5l113.5-113.5c7.5-7.5%2C19.8-7.5%2C27.3%2C0C294.5%2C98.935%2C294.5%2C111.235%2C287%2C118.735z%22%2F%3E%3C%2Fsvg%3E'); /* Custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+    padding-right: 40px; /* Make space for the custom arrow */
+}
+
+
+/* =================================================================== */
+/* RESPONSIVE BREAKPOINTS
+/* =================================================================== */
+
+@media (max-width: 992px) {
+    /* --- SWITCH TO MOBILE LAYOUT --- */
+    .services-layout {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .services-sidebar {
+        display: none; /* Hide the desktop sidebar */
+    }
+    .category-nav-mobile {
+        display: block; /* Show the mobile dropdown */
+    }
+
+    /* Adjust header for mobile */
+    .services-header {
+        margin-bottom: 40px;
+    }
+    .services-header h1 {
+        font-size: 2.5rem;
+    }
+    .services-header p {
+        font-size: 1rem;
+    }
+
+    /* Adjust content area for mobile */
+    .services-content {
+        padding-top: 0; /* Remove top padding when dropdown is present */
+    }
+    .service-category-section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    /* Control visibility of sections on mobile */
+    .service-category-section.hidden-mobile-section {
+        display: none;
+    }
+    .service-category-section.active-mobile-section {
+        display: block; /* Ensure only active section is shown */
+    }
+
+    /* --- MOBILE GRID (2-column by default for medium screens) --- */
+    .Womensservices-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); Allow flexibility */
+        gap: 20px; /* Adjust the gap for a tighter mobile layout */
+    }
+    
+    .service-card {
+        max-width: none; /* Ensure cards expand to grid column width */
+        text-align: center;
+    }
+
+    .service-card-image {
+        height: 140px; /* Adjust image height for 2-column layout */
+    }
+
+    .service-card-content {
+        padding: 15px; /* Reduce padding for smaller cards */
+    }
+
+    .service-card-title {
+        font-size: 1.1rem; /* Adjust font size */
+        margin-bottom: 5px;
+    }
+
+    .service_card_description {
+        font-size: 0.85rem; /* Adjust font size */
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 480px) {
+    /* On very small phones, switch back to a 1-column layout for readability */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        max-width: 300px; /* Set a max-width for the single column */
+        margin: 0 auto; /* Center the single card */
+    }
+    .services-header h1 {
+        font-size: 2rem;
+    }
+    .services-header p {
+        font-size: 0.9rem;
+    }
+    .service-category-section h2 {
+        font-size: 1.8rem;
+    }
+    .category-nav-mobile select {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}

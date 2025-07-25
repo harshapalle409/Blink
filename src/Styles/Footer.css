@@ -1,0 +1,256 @@
+/* --- ROOT FOOTER STYLES --- */
+.salon_footer_root {
+  background-color: #1A1A1A; /* Black for brand consistency */
+  color: #A0A0A0; /* Default text color for light grey from navbar */
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem 3rem; /* Consistent padding */
+  margin-top: 3rem;
+  box-sizing: border-box;
+}
+
+/* --- TOP SECTION - Desktop-first: uses flex-direction: row by default --- */
+.salon_footer_top {
+  display: flex;
+  flex-direction: row; /* DEFAULT for desktop: Columns are in a row */
+  flex-wrap: wrap; /* Allow columns to wrap if space is tight */
+  justify-content: space-between; /* Distribute columns evenly */
+  gap: 2rem; /* Desktop gap between columns */
+  margin-bottom: 2rem;
+}
+
+/* --- INDIVIDUAL COLUMN - Flex properties for desktop layout (CHANGE HERE) --- */
+.salon_footer_column {
+  flex: 1 1 180px; /* <--- CHANGE: Reduced base width to 180px (from 220px) */
+  max-width: 250px; /* <--- NEW: Added a max-width to constrain growth even further */
+  text-align: left; /* Text aligned left by default */
+}
+
+/* --- LOGO STYLING --- */
+.salon_footer_logo {
+  max-width: 180px; /* Default max-width for desktop */
+  height: auto;
+  margin-top: auto;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+
+/* --- HEADING --- */
+.salon_footer_heading {
+  color: #FFFFFF; /* White headings for better contrast on black */
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.salon_footer_heading::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(to right, #00C6FF, #F00B75); /* Your brand gradient */
+  margin-top: 6px;
+}
+
+/* --- LINKS & CONTACT --- */
+/* Target specific elements that might contain icons */
+.salon_footer_column .contact-item { /* Assuming you wrap icon+text in a class like 'contact-item' if it's not a <p> or <li> */
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem; /* Consistent spacing between contact items */
+    color: #A0A0A0;
+    text-decoration: none;
+    line-height: 1.5; /* Ensure line height consistency */
+}
+
+/* Apply to general paragraphs and list items */
+.salon_footer_column p,
+.salon_footer_column ul li {
+  color: #A0A0A0; /* Default text color for these items */
+  line-height: 1.5;
+  margin-bottom: 0.5rem; /* Default spacing for these items */
+}
+
+/* Ensure links themselves do not force new lines if they are children of flex items */
+.salon_footer_link,
+.salon_footer_address,
+.salon_footer_email {
+    display: inline-block; /* Allow text to wrap if needed, but not force new line from parent */
+    color: #A0A0A0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Remove bottom margin from last item in a list/column */
+.salon_footer_column ul {
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+  margin: 0;
+}
+.salon_footer_column ul li:last-child,
+.salon_footer_column p:last-of-type {
+    margin-bottom: 0;
+}
+
+
+.salon_footer_link:hover,
+.salon_footer_address:hover,
+.salon_footer_email:hover {
+  color: #FFFFFF; /* White on hover for brand consistency */
+}
+
+.salon_footer_icon {
+  margin-right: 8px;
+  vertical-align: middle;
+  font-size: 1em;
+  color: #A0A0A0; /* Match text color */
+  flex-shrink: 0; /* Prevent icon from shrinking if text is long */
+}
+
+/* --- SOCIAL SECTION --- */
+.salon_footer_social {
+  text-align: center; /* Centered for both desktop and mobile now */
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.salon_footer_social p {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #A0A0A0;
+}
+
+.salon_footer_icons a {
+  color: #A0A0A0;
+  margin: 0 0.75rem;
+  font-size: 1.4rem;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.salon_footer_icons a:hover {
+  color: #FFFFFF;
+  transform: scale(1.15);
+}
+
+/* --- BOTTOM SECTION --- */
+.salon_footer_bottom {
+  text-align: center;
+  border-top: 1px solid #333; /* Darker border for consistency on black background */
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #808080;
+}
+
+/* --- MAP EMBED STYLING --- */
+.salon_footer_map {
+  margin-top: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.salon_footer_map iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+}
+
+
+/* --- RESPONSIVE FOOTER (Mobile overrides Desktop defaults) --- */
+
+@media (max-width: 768px) {
+  .salon_footer_root {
+    padding: 2rem 1.5rem; /* Reduced horizontal padding for smaller screens */
+  }
+
+  .salon_footer_top {
+    flex-direction: column; /* MOBILE: Columns stack vertically */
+    align-items: center; /* MOBILE: Center content horizontally */
+    gap: 1.5rem; /* REDUCED GAP FOR MOBILE */
+  }
+
+  .salon_footer_column1 {
+    /* width: 100%; MOBILE: Each column takes full width */
+    text-align: center; /* MOBILE: Center text within each column */
+    max-width: none; /* Remove max-width constraint on mobile */
+  }
+  .salon_footer_column {
+    width: 100%; /* MOBILE: Each column takes full width */
+    text-align: center; /* MOBILE: Center text within each column */
+    max-width: none; /* Remove max-width constraint on mobile */
+  }
+  /* Heading specific adjustments for mobile center alignment */
+  .salon_footer_heading {
+    text-align: center; /* Ensure headings are centered */
+  }
+  .salon_footer_heading::after {
+    margin: 6px auto 0 auto; /* Center the underline for headings */
+  }
+
+  /* Specific contact/link item centering for mobile */
+  .salon_footer_column p,
+  .salon_footer_column ul li {
+    justify-content: center; /* Explicitly center content of flex items (icon + text) */
+    margin-bottom: 0.5rem; /* Reduce spacing */
+  }
+
+  .salon_footer_logo {
+    margin: 0 auto 1.5rem auto; /* MOBILE: Center logo horizontally */
+  }
+
+  .salon_footer_social {
+    text-align: center; /* Ensure centered social on mobile */
+  }
+
+  .salon_footer_icons a {
+    margin: 0 0.75rem; /* Ensure centered social icons on mobile */
+  }
+
+  .salon_footer_map iframe {
+      height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .salon_footer_root {
+    padding: 1.5rem 1rem;
+  }
+
+  .salon_footer_top {
+    gap: 1rem; /* Further aggressively reduced gap for very small screens */
+  }
+
+  .salon_footer_logo {
+    max-width: 150px;
+    margin-bottom: 1rem;
+  }
+
+  .salon_footer_heading {
+    font-size: 1.1rem;
+  }
+
+  .salon_footer_column p,
+  .salon_footer_column ul li {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .salon_footer_social p {
+    font-size: 0.95rem;
+  }
+
+  .salon_footer_icons a {
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+  }
+
+  .salon_footer_map iframe {
+      height: 150px;
+  }
+
+  .salon_footer_bottom {
+    font-size: 0.8rem;
+  }
+}

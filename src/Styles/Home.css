@@ -1,0 +1,137 @@
+.Homegap-div{
+    padding-Top: 100px;
+    padding-Bottom: 60px;
+    min-Height: calc(100vh - 160px);
+}
+
+/* Using the "Blink" Design System Variables */
+:root {
+  --vibrant-cyan: #00C6FF;
+  --hot-pink: #F00B75;
+  --bg-dark: #1A1A1A;
+  --bg-card: #FFFFFF; /* This will be our main background now */
+  --text-primary: #1A1A1A; /* Primary text will be dark for the white background */
+  --text-secondary: #555555; /* Secondary text will be a softer gray */
+}
+
+/* --- Home Page Hero Section --- */
+.homepage_hero_section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+    background-color: var(--bg-card); /* UPDATED: Changed to white as requested */
+    font-family: 'Poppins', sans-serif;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Left Content Area (Text) */
+.hero_content_left {
+    flex: 1;
+    max-width: 500px;
+    text-align: left;
+}
+
+.hero_content_left h1 {
+    font-size: 3.5em;
+    color: var(--text-primary); /* UPDATED: Dark text for readability on white */
+    margin-bottom: 20px;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+/* You can add a span with this class in your JSX to highlight text */
+.hero_content_left h1 .highlight {
+    /* UPDATED: Added a highlight class to use your brand gradient */
+    background: linear-gradient(to right, var(--vibrant-cyan), var(--hot-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.hero_content_left p {
+    font-size: 1.1em;
+    color: var(--text-secondary); /* UPDATED: Softer gray for the paragraph */
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Right Content Area (Image) */
+.hero_image_right {
+    flex: 1.2;
+    max-width: 650px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* UPDATED: Slightly softer shadow */
+}
+
+.hero_image_right img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+}
+
+/* --- Responsive Adjustments (Layout untouched, only comments added) --- */
+@media (max-width: 1024px) {
+    .homepage_hero_section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 30px;
+    }
+    .hero_content_left {
+        max-width: 100%;
+        text-align: center;
+    }
+    .hero_content_left h1 {
+        font-size: 2.8em;
+    }
+    .hero_content_left p {
+        font-size: 1em;
+    }
+    .hero_image_right {
+        max-width: 90%;
+    }
+    .Homegap-div{
+        padding-Top: 0px;
+        padding-Bottom: 0px;
+        /* min-Height: calc(100vh - 160px); */
+    }
+}
+
+@media (max-width: 768px) {
+    .Homegap-div{
+        padding-Top: 0px;
+        padding-Bottom: 0px;
+        /* min-Height: calc(100vh - 160px); */
+    }
+    .homepage_hero_section {
+        padding: 30px 15px;
+    }
+    .hero_content_left h1 {
+        font-size: 2.2em;
+    }
+    .hero_content_left p {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .homepage_hero_section {
+        padding: 20px 10px;
+        gap: 20px;
+    }
+    .hero_content_left h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+    .hero_content_left p {
+        font-size: 0.9em;
+        margin-bottom: 20px;
+    }
+}

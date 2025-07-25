@@ -1,0 +1,240 @@
+/* Using the "Blink" Design System Variables */
+:root {
+  --vibrant-cyan: #00C6FF;
+  --hot-pink: #F00B75;
+  --bg-dark: #1A1A1A;          /* For the dark info cards */
+  --bg-light: #FFFFFF;         /* Main page background AND light cards */
+  --text-primary-light: #F5F5F5;    /* Text on dark cards */
+  --text-secondary-light: #A0A0A0; /* Sub-text on dark cards */
+  --text-primary-dark: #1A1A1A;     /* Main text on light backgrounds */
+  --text-secondary-dark: #555555;  /* Sub-text on light backgrounds */
+}
+
+/* --- Contact Page Wrapper --- */
+.contact_wrapper {
+  background-color: var(--bg-light); /* UPDATED: Main background is now white */
+  color: var(--text-primary-dark);  /* UPDATED: Default text is dark */
+  font-family: 'Poppins', sans-serif;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Page Level Headings */
+.contact_page_heading {
+  font-size: 3em;
+  color: var(--text-primary-dark); /* UPDATED */
+  /* ... rest is unchanged ... */
+}
+.contact_page_heading::after {
+  background: linear-gradient(to right, var(--vibrant-cyan), var(--hot-pink));
+  /* ... rest is unchanged ... */
+}
+.contact_page_intro {
+  font-size: 1.2em;
+  color: var(--text-secondary-dark); /* UPDATED */
+  /* ... rest is unchanged ... */
+}
+
+/* --- Main Contact Layout --- */
+.contact_layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* --- Individual Contact Boxes (Default) --- */
+.contact_box {
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* UPDATED: Softer shadow for light theme */
+  box-sizing: border-box;
+  flex: 1 1 auto;
+}
+
+/* The form on the left */
+.contact_form_section {
+  background-color: var(--bg-light); /* UPDATED: White background */
+  flex-basis: 600px;
+  max-width: 650px;
+}
+
+/* The info container on the right */
+.contact_info_section {
+  background-color: transparent; /* Container is transparent */
+  box-shadow: none;
+  flex-basis: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: space-between;
+  padding: 0;
+}
+
+/* --- Contact Form Styling (on the white card) --- */
+.contact_heading {
+  font-size: 2em;
+  color: var(--text-primary-dark);
+  margin-bottom: 25px;
+  text-align: center;
+}
+.contact_subheading {
+  display: block;
+  font-size: 0.8em;
+  color: var(--text-secondary-dark);
+  margin-top: 10px;
+  line-height: 1.4;
+}
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+.contact_form input[type="text"],
+.contact_form input[type="email"],
+.contact_form input[type="tel"],
+.contact_form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+  color: var(--text-primary-dark);
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+}
+.contact_form input::placeholder,
+.contact_form textarea::placeholder {
+  color: #bbb;
+}
+.contact_form input:focus,
+.contact_form textarea:focus {
+  border-color: var(--vibrant-cyan);
+  box-shadow: 0 0 0 2px rgba(0, 198, 255, 0.2);
+  outline: none;
+}
+.contact_form textarea {
+  resize: vertical;
+}
+.contact_form button {
+  background: linear-gradient(to right, var(--vibrant-cyan), var(--hot-pink));
+  color: #FFFFFF;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.contact_form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(240, 11, 117, 0.4);
+}
+
+/* --- Business Hours & Map Sections (on the right) --- */
+.business_hours_card,
+.shop_location_card {
+  background-color: var(--bg-dark); /* UPDATED: Dark background */
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.info_section_subheading {
+  font-size: 1.4em;
+  color: var(--hot-pink);
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 5px;
+}
+.info_section_subheading::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(to right, var(--vibrant-cyan), var(--hot-pink));
+  margin: 5px auto 0 auto;
+  border-radius: 1px;
+}
+
+.business_hours_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+  color: var(--text-secondary-light); /* UPDATED: Light text */
+  text-align: center;
+}
+.business_hours_list li { margin-bottom: 8px; }
+.business_hours_list li:last-child { margin-bottom: 0; }
+
+/* Map Styling */
+.map_embed_container {
+  background-color: #f0f0f0;
+  position: relative;
+  width: 100%;
+  padding-top: 65%;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.map_embed_container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+.map_click_prompt {
+  font-size: 0.9em;
+  color: var(--text-secondary-light); /* UPDATED: Light text */
+  text-align: center;
+  margin-top: 5px;
+  transition: color 0.3s ease;
+}
+.map_link_wrapper:hover .map_click_prompt {
+  color: #FFFFFF; /* UPDATED: Brighter light text on hover */
+}
+
+/* --- RESPONSIVE ADJUSTMENTS (Layout untouched, only comments added) --- */
+@media (max-width: 992px) {
+  .contact_layout { flex-direction: column; gap: 20px; }
+  .contact_form_section, .contact_info_section { flex-basis: auto; max-width: 600px; margin: 0 auto; width: 100%; }
+  .contact_info_section { min-height: auto; gap: 20px; }
+  .contact_heading { font-size: 1.8em; }
+  .contact_subheading { font-size: 0.75em; }
+  .info_section_subheading { font-size: 1.2em; }
+}
+@media (max-width: 768px) {
+  .contact_wrapper { padding: 30px 15px; }
+  .contact_page_heading { font-size: 2.5em; }
+  .contact_page_intro { font-size: 1.1em; }
+  .contact_box { padding: 30px; }
+  .contact_heading { font-size: 1.6em; margin-bottom: 20px; }
+  .contact_subheading { font-size: 0.7em; }
+  .contact_form button { font-size: 1em; padding: 12px 25px; }
+  .business_hours_card, .shop_location_card { padding: 20px; }
+  .info_section_subheading { font-size: 1.1em; }
+  .business_hours_list { font-size: 0.95em; }
+}
+@media (max-width: 480px) {
+  .contact_wrapper { padding: 20px 10px; }
+  .contact_page_heading { font-size: 2em; }
+  .contact_page_intro { font-size: 1em; margin-bottom: 30px; }
+  .contact_box { padding: 25px; }
+  .contact_heading { font-size: 1.4em; margin-bottom: 15px; }
+  .contact_form input, .contact_form textarea { padding: 10px 12px; font-size: 0.95em; }
+  .contact_form button { padding: 10px 20px; font-size: 0.95em; }
+  .business_hours_card, .shop_location_card { padding: 15px; }
+  .info_section_subheading { font-size: 1em; }
+  .business_hours_list { font-size: 0.9em; }
+  .map_embed_container { padding-top: 75%; margin-bottom: 8px; }
+  .map_click_prompt { font-size: 0.8em; }
+}

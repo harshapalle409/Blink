@@ -1,0 +1,63 @@
+/* Service.css */
+
+.services_wrapper {
+  padding: 40px 20px; /* Ample padding for spacing */
+  max-width: 1000px; /* Max width to keep content readable */
+  margin: 0 auto; /* Center the wrapper */
+  text-align: center; /* Center align text content */
+  font-family: 'Poppins', sans-serif; /* Consistent font */
+  color: #333; /* Default text color for good readability on light background */
+}
+
+.services_heading {
+  font-size: 3em; /* Larger, prominent heading */
+  color: #333; /* Dark color for strong contrast */
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 10px;
+  display: inline-block; /* Allows the ::after pseudo-element to be centered under the text */
+}
+
+.services_heading::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100%; /* Line spans the width of the text */
+  max-width: 250px; /* Max width for the underline */
+  height: 5px;
+  background: linear-gradient(to right, #00C6FF, #F00B75); /* Your brand accent gradient */
+  border-radius: 3px;
+}
+
+.services_intro {
+  font-size: 1.2em; /* Readable intro text size */
+  color: #555; /* Slightly lighter than heading for hierarchy */
+  line-height: 1.6;
+  max-width: 700px; /* Constrain width for better readability */
+  margin: 0 auto 40px auto; /* Center and add bottom margin */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .services_heading {
+    font-size: 2.5em; /* Adjust for smaller screens */
+  }
+  .services_intro {
+    font-size: 1.1em;
+    padding: 0 10px; /* Add some horizontal padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .services_heading {
+    font-size: 2em; /* Further adjustment for mobile */
+  }
+  .services_intro {
+    font-size: 1em;
+  }
+  .services_wrapper {
+    padding: 30px 15px;
+  }
+}

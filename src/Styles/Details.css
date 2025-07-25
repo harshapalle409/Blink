@@ -1,0 +1,183 @@
+/* Using the "Blink" Design System Variables */
+:root {
+  --vibrant-cyan: #00C6FF;
+  --hot-pink: #F00B75;
+  --bg-dark: #1A1A1A;
+  --bg-card: #FFFFFF; /* This will be our section background */
+  --text-primary: #1A1A1A; /* Dark text for the white background */
+  --text-secondary: #555555;
+  --card-shadow: rgba(0, 0, 0, 0.08);
+}
+
+/* Keyframe animations remain the same */
+@keyframes fadeInUp { 0% { opacity: 0; transform: translateY(30px); } 100% { opacity: 1; transform: translateY(0); } }
+@keyframes underlineSlide { 0% { width: 0; } 100% { width: 80px; } }
+
+.salon_details_section {
+    padding: 80px 20px;
+    background-color: var(--bg-card); /* UPDATED: Changed to white as requested */
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-primary); /* UPDATED */
+    text-align: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.salon_details_main_heading {
+    font-size: 2.5em;
+    color: var(--text-primary); /* UPDATED */
+    margin-bottom: 50px;
+    position: relative;
+    padding-bottom: 15px;
+    font-weight: 600;
+}
+
+.salon_details_main_heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, var(--vibrant-cyan), var(--hot-pink)); /* UPDATED */
+    border-radius: 2px;
+    animation: underlineSlide 0.8s ease forwards;
+}
+
+.salon_details_container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(320px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.details_card {
+    background-color: var(--bg-card); /* UPDATED */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--card-shadow); /* UPDATED */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    text-align: left;
+    height: 100%;
+    min-height: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.details_card.full_width_card {
+    grid-column: 1 / -1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.details_card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12); /* UPDATED */
+}
+
+.details_card_heading {
+    font-size: 1.6em;
+    color: var(--hot-pink); /* UPDATED: Branded accent color */
+    margin-bottom: 20px;
+    font-weight: 600;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* List styling */
+.payment_methods_list,
+.business_hours_list_grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.details_list_item {
+    font-size: 1.1em;
+    color: var(--text-secondary); /* UPDATED */
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.details_list_item:last-child {
+    margin-bottom: 0;
+}
+
+.details_bullet {
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(to right, var(--vibrant-cyan), var(--hot-pink)); /* UPDATED */
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.parking_text {
+    font-size: 1.1em;
+    color: var(--text-secondary); /* UPDATED */
+    display: flex;
+    align-items: center;
+}
+
+/* Specific grid for payment methods (2 columns within its card) */
+.payment_methods_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+}
+
+/* Specific grid for business hours (2 columns within its card) */
+.business_hours_list_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px 20px;
+}
+
+.details_day {
+    font-weight: 600;
+    width: 60px;
+    display: inline-block;
+    color: var(--text-primary); /* UPDATED: Make the day stand out more */
+}
+
+.details_time {
+    flex-grow: 1;
+}
+
+
+/* --- Responsive Adjustments (Layout untouched) --- */
+@media (max-width: 992px) {
+    .salon_details_section { padding: 60px 15px; }
+    .salon_details_main_heading { font-size: 2.2em; margin-bottom: 40px; }
+    .salon_details_container { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); max-width: 700px; }
+    .details_card { padding: 25px; min-height: 260px; }
+    .details_card_heading { font-size: 1.4em; margin-bottom: 15px; }
+    .details_list_item, .parking_text { font-size: 1em; }
+    .payment_methods_list, .business_hours_list_grid { grid-template-columns: 1fr; gap: 8px 0; }
+}
+
+@media (max-width: 768px) {
+    .salon_details_section { padding: 50px 10px; }
+    .salon_details_main_heading { font-size: 2em; margin-bottom: 30px; }
+    .salon_details_container { grid-template-columns: 1fr; max-width: 500px; }
+    .details_card { padding: 20px; min-height: auto; }
+    .details_card.full_width_card { max-width: 100%; }
+    .details_bullet { width: 7px; height: 7px; margin-right: 8px; }
+    .details_day { width: 50px; }
+}
+
+@media (max-width: 480px) {
+    .salon_details_section { padding: 40px 10px; }
+    .salon_details_main_heading { font-size: 1.8em; margin-bottom: 25px; }
+    .details_card { padding: 15px; }
+    .details_card_heading { font-size: 1.2em; margin-bottom: 10px; }
+    .details_list_item, .parking_text { font-size: 0.95em; }
+}
