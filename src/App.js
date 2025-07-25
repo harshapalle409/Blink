@@ -7,8 +7,8 @@ import Footer from './Components/Footer';
 import Services from './Components/Services';
 import MenServices from './Components/MensService';
 // import MenServices2 from './Components/MensService2';
-import WomenServices from './Components/WomensService'; 
-// import WomenServices2 from './Components/WomensService2'; 
+// import WomenServices from './Components/WomensService'; 
+import WomenServices2 from './Components/WomensService2'; 
 import Gallery from './Components/Gallery';
 import Contact from './Components/Contact';
 import FAQ from './Components/FAQ';
@@ -31,8 +31,8 @@ function App() {
           <Route path="/services" element={<Services />}>
             <Route path="men" element={<MenServices />} />
             {/* <Route path="men" element={<MenServices2 />} /> */}
-            {<Route path="women" element={<WomenServices />} /> }
-            {/* {<Route path="women" element={<WomenServices2 />} /> } */}
+            {/* {<Route path="women" element={<WomenServices />} /> } */}
+            {<Route path="women" element={<WomenServices2 />} /> }
           </Route>
 
           <Route path="/Gallery" element={<Gallery />} />
